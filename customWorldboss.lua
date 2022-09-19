@@ -30,20 +30,20 @@
 -- ADMIN GUIDE:  -  compile the core with ElunaLua module
 --               -  adjust config in this file
 --               -  add this script to ../lua_scripts/
---               -  adjust the IDs and config flags in case of conflicts and run the associated SQL to add the required NPCs
+--               -  在发生冲突时调整 ID 和配置标志并运行相关的 SQL 以添加所需的 NPC
 --               -  the acore_cms module assumes that 1112001 is the boss of encounter 1 and adding +10 for each subsequent encounter
 --                  (1112011 = boss for encounter 2 / 1112021 = boss for encounter 3, etc.)
 ------------------------------------------------------------------------------------------------
--- GM GUIDE:     -  use .startevent $event $difficulty to start and spawn
+-- GM GUIDE:     -  使用  .startevent $event $difficulty 启动和生成
 --               -  maybe offer teleports
---               -  use .stopevent to end the event and despawn the NPC
+--               -  使用  .stopevent 结束事件并让 NPC 消失
 ------------------------------------------------------------------------------------------------
 local Config = {}                       --general config flags
 
-local Config_npcEntry = {}              --db entry of the NPC creature to summon the boss
-local Config_npcText = {}               --gossip in npc_text to be told by the summoning NPC
-local Config_bossEntry = {}             --db entry of the boss creature
-local Config_addEntry = {}              --db entry of the add creature
+local Config_npcEntry = {}              --NPC生物召唤boss的db条目
+local Config_npcText = {}               --npc_text 中的闲话由召唤 NPC 告知
+local Config_bossEntry = {}             --boss生物的db条目
+local Config_addEntry = {}              --添加生物的 db 条目
 
 local Config_bossSpell1 = {}            --directly applied to the tank
 local Config_bossSpell2 = {}            --randomly applied to a player in 35m(configurable) range

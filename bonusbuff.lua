@@ -46,7 +46,7 @@ local TEAM_ALLIANCE = 0
 local TEAM_HORDE = 1
 local TEAM_NEUTRAL = 2
 
-local message = 'Happy Holidays from Chromie and her helpers!'
+local message = '时光回溯的玩家们节日快乐！'
 
 local function splitString(inputstr, seperator)
     if seperator == nil then
