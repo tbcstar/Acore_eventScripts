@@ -169,8 +169,8 @@ Config.NpcX = -7168.4
 Config.NpcY = -3961.6
 Config.NpcZ = 9.403
 Config.NpcO = 6.24
-Config.PartyNpcYellText = 'Come to the Gadgetzan graveyard, if you dare. Try and prove yourself to Chromie!'
-Config.PartyNpcSayText = 'What are you waiting for? Bring a party of five and step up against the enemies of time!'
+Config.PartyNpcYellText = '如果你敢的话，就来加基森墓地吧。 尝试向世界证明自己！'
+Config.PartyNpcSayText = '你在等什么？带上五人小队，与时间的敌人对抗吧！'
 
 ------------------------------------------
 -- List of encounters:
@@ -259,7 +259,7 @@ Config_addEnoughYell[1] = "ENOUGH"      -- yell for the add at 33% and 66% hp
 Config_addEnoughSound[1] = 412          -- sound to play when the add is at 33% and 66%
 Config_addSpell2Sound[1] = 6436         -- sound to play when add casts spell 2
 --yell for the boss when all adds are dead
-Config_bossYellPhase2[1] = "You might have handled these creatures. But now I WILL handle YOU!"
+Config_bossYellPhase2[1] = "你可能已经处理过这些生物。 但现在我会处理你！"
 -- yell for the boss when they cast on themself
 Config_bossSpellSelfYell[1] = nil
 
@@ -318,7 +318,7 @@ Config_addEnoughYell[2] = "Ssssssuffer!"-- yell for the add at 33% and 66% hp
 Config_addEnoughSound[2] = 412          -- sound to play when the add is at 33% and 66%
 Config_addSpell2Sound[2] = 6436         -- sound to play when add casts spell 2
 --yell for the boss when all adds are dead
-Config_bossYellPhase2[2] = "Now. You. Die."
+Config_bossYellPhase2[2] = "现在。 你。 死。"
 -- yell for the boss when they cast on themself
 Config_bossSpellSelfYell[2] = nil
 
@@ -377,9 +377,9 @@ Config_addEnoughYell[3] = "Rooooaaar"   -- yell for the add at 33% and 66% hp
 Config_addEnoughSound[3] = 412          -- sound to play when the add is at 33% and 66%
 Config_addSpell2Sound[3] = 6436         -- sound to play when add casts spell 2
 --yell for the boss when all adds are dead
-Config_bossYellPhase2[3] = " I'll git ye!"
+Config_bossYellPhase2[3] = " 我给你！"
 -- yell for the boss when they cast on themself
-Config_bossSpellSelfYell[3] = "Yous Minions be feeding me all ya Strength!"
+Config_bossSpellSelfYell[3] = "你的奴才在喂我所有的力量！"
 
 ------------------------------------------
 -- Begin of encounter 4 config
@@ -464,9 +464,9 @@ Config_addEnoughYell[4] = "Rooooaaar"   -- yell for the add at 33% and 66% hp
 Config_addEnoughSound[4] = 412          -- sound to play when the add is at 33% and 66%
 Config_addSpell2Sound[4] = 6436         -- sound to play when add casts spell 2
 --yell for the boss when all adds are dead
-Config_bossYellPhase2[4] = " I'll git ye!"
+Config_bossYellPhase2[4] = " 我给你！"
 -- yell for the boss when they cast on themself
-Config_bossSpellSelfYell[4] = "Yous Minions be feeding me all ya Strength!"
+Config_bossSpellSelfYell[4] = "你的奴才在喂我所有的力量！"
 
 ------------------------------------------
 -- Begin of encounter 5 config
@@ -551,9 +551,9 @@ Config_addEnoughYell[5] = "Rooooaaar"   -- yell for the add at 33% and 66% hp
 Config_addEnoughSound[5] = 412          -- sound to play when the add is at 33% and 66%
 Config_addSpell2Sound[5] = 6436         -- sound to play when add casts spell 2
 --yell for the boss when all adds are dead
-Config_bossYellPhase2[5] = " I'll git ye!"
+Config_bossYellPhase2[5] = " 我给你！"
 -- yell for the boss when they cast on themself
-Config_bossSpellSelfYell[5] = "Yous Minions be feeding me all ya Strength!"
+Config_bossSpellSelfYell[5] = "你的奴才在喂我所有的力量！"
 
 ------------------------------------------
 -- Begin of encounter 6 config
@@ -634,14 +634,14 @@ Config_aura2Add2[6] = nil               -- another aura to add to the 2nd add--
 Config_aura1Add3[6] = nil               -- an aura to add to all ads from the 3rd on-- Fiery Aura
 Config_aura2Add3[6] = nil               -- another aura to add to all add from the 3rd on--
 
-Config_addSpell3Yell[6] = "Die, Insect."-- yell for the adds when Spell 3 is cast
-Config_addEnoughYell[6] = "Feel my Wrath!"   -- yell for the add at 33% and 66% hp
+Config_addSpell3Yell[6] = "死吧，虫子。"-- yell for the adds when Spell 3 is cast
+Config_addEnoughYell[6] = "感受我的愤怒！"   -- yell for the add at 33% and 66% hp
 Config_addEnoughSound[6] = 412          -- sound to play when the add is at 33% and 66%
 Config_addSpell2Sound[6] = 6436         -- sound to play when add casts spell 2
 --yell for the boss when all adds are dead
 Config_bossYellPhase2[6] = "Bee bop. Reconfiguring!"
 -- yell for the boss when they cast on themself
-Config_bossSpellSelfYell[6] = "Adjusting Defenses. Stand back."
+Config_bossSpellSelfYell[6] = "调整防御。 退后。"
 
 ------------------------------------------
 -- Begin of encounter 7 config
