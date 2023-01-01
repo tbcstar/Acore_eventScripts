@@ -90,8 +90,8 @@ xCoord['gurubashi'] = -13207.77
 yCoord['gurubashi'] = 274.35
 zCoord['gurubashi'] = 38.23
 orientation['gurubashi'] = 4.22
-initialMessage['gurubashi'] = " minutes from now all players which reside in an open world map AND opt in will be teleported for FFA-PvP. If you wish to participate type '.fun on'. There will be further announcements every minute."
-followupMessage['gurubashi'] = " all players in open world maps who sign up, will be teleported for FFA-PvP. If you wish to opt in, please type '.fun on'."
+initialMessage['gurubashi'] = " 几分钟后，所有在开放世界地图中并选择加入的玩家都将被传送到 FFA-PvP。 如果您想参加，请输入“.fun on”。 每分钟都会有进一步的公告。"
+followupMessage['gurubashi'] = " 所有在开放世界地图中的玩家都将被传送到 FFA-PvP。 如果您想选择加入，请输入“.fun on”。"
 pvpOn['gurubashi'] = false -- Don't turn World PvP on
 minLevel['gurubashi'] = nil -- it is ffa PvP, no need for a minimum level
 checkAmount['gurubashi'] = false
@@ -124,8 +124,8 @@ xCoord['halaa_attacker'] = -1908
 yCoord['halaa_attacker'] = 8038
 zCoord['halaa_attacker'] = -8
 orientation['halaa_attacker'] = 6
-initialMessage['halaa'] = " minutes from now all players which reside in an open world map AND opt in will be teleported to Halaa for mass-PvP. If you wish to participate type '.fun on'. There will be further announcements every minute."
-followupMessage['halaa'] = " all players in open world maps who sign up, will be teleported to Halaa for mass-PvP. If you wish to opt in, please type '.fun on'."
+initialMessage['halaa'] = " 几分钟后，所有在开放世界地图中并选择加入的玩家都将被传送到哈兰进行大规模 PvP。 如果您想参加，请输入“.fun on”。 每分钟都会有进一步的公告。"
+followupMessage['halaa'] = " 所有在开放世界地图中的玩家都将被传送到哈兰进行大规模 PvP。 如果您想选择加入，请输入“.fun on”。"
 pvpOn['halaa'] = true
 minLevel['halaa'] = 58
 checkAmount['halaa'] = true
@@ -140,7 +140,7 @@ local TEAM_ALLIANCE = 0
 local TEAM_HORDE = 1
 local TEAM_NEUTRAL = 2
 
-local message = "Party time! Greetings from Chromie and her helpers!"
+local message = "派对时间！来自TBCstar时光回溯团队的问候！"
 
 local storedMap = {}
 local storedX = {}
@@ -182,7 +182,7 @@ local function ft_wipePos( player )
         if numExpectedHorde < 0 then numExpectedHorde = 0 end
 
         --
-        player:SendBroadcastMessage("Your teleport has expired.")
+        player:SendBroadcastMessage("您的传送已过期。")
         storedMap[player:GetGUIDLow()] = nil
         storedX[player:GetGUIDLow()] = nil
         storedY[player:GetGUIDLow()] = nil
@@ -218,7 +218,7 @@ local function ft_storePos(player)
 end
 
 local function ft_teleportReminder(eventId, delay, repeats)
-    SendWorldMessage("Participants of the event can become revived AND return back to the position before the event by typing '.fun return'.")
+    SendWorldMessage("通过输入“.fun return”，活动的参与者可以复活并回到活动前的位置。")
     if repeats == 1 then
         eventName = nil
     end
@@ -270,7 +270,7 @@ local function ft_teleport(playerArray)
                 playerArray[n]:PlayDirectSound(2847, playerArray[n])
                 playerArray[n]:SendBroadcastMessage( message )
             else
-                playerArray[n]:SendBroadcastMessage( 'You can not participate from raids/dungeons/BGs/arenas.' )
+                playerArray[n]:SendBroadcastMessage( '您不能从副本/战场/竞技场中参与。' )
             end
 
         end
@@ -298,7 +298,7 @@ local function ft_startEvent()
             attacker = TEAM_ALLIANCE
             SetOwnerHalaa(1)
         end
-        SendWorldMessage('The battle for Halaa has begun!')
+        SendWorldMessage('哈兰之战已经打响！')
     end
 
     if Players and #Players > 0 then
@@ -374,7 +374,7 @@ local function ft_startEvent()
     end
 
     duration = GetCurrTime() - duration
-    print( 'Executing Event Teleport. Duration: '..duration..'ms. Participants: '..#Players )
+    print( '执行事件传送。 持续时间：'..duration..'ms。参与者：'..#Players )
 
     CreateLuaEvent(ft_teleportReminder,30000,6)
     optIn = {}
@@ -408,30 +408,30 @@ local function ft_command(event, player, command, chatHandler)
     end
 
     if commandArray[2] == nil then
-        chatHandler:SendSysMessage("If you wish to opt in, please type '.fun on'. You can change your decision and opt out by typing '.fun no' or '.fun off'.")
+        chatHandler:SendSysMessage("如果您想选择加入，请输入“.fun on”。 您可以通过输入“.fun no”或“.fun off”来改变您的决定并选择退出。")
     end
 
     if commandArray[2] == 'no' or commandArray[2] == 'off' then
         if player == nil then
-            chatHandler:SendSysMessage("Can not use 'no' from the console. Requires player object.")
+            chatHandler:SendSysMessage("不能从控制台使用“no”。 需要玩家对象。")
             return false
         end
         optIn[player:GetGUIDLow()] = nil
-        chatHandler:SendSysMessage("You've chosen to NOT participate in the event this time.")
+        chatHandler:SendSysMessage("您这次选择不参加活动。")
         return false
     end
 
     if commandArray[2] == 'on' then
         -- if player is nil, it's the console
         if player == nil then
-            chatHandler:SendSysMessage("Can not use 'on' from the console. Requires player object.")
+            chatHandler:SendSysMessage("不能从控制台使用“on”。 需要玩家对象。")
             return false
         end
 
         -- don't allow players too low to participate
         if minLevel[eventName] ~= nil then
             if player:GetLevel() < minLevel[eventName] then
-                chatHandler:SendSysMessage("You are not high enough level to participate in this event. Minimum level is "..minLevel[eventName]..".")
+                chatHandler:SendSysMessage("您的等级不够，无法参加此活动。 最低等级要求是 "..minLevel[eventName].."。")
                 return false
             end
         end
@@ -440,19 +440,19 @@ local function ft_command(event, player, command, chatHandler)
         if checkAmount[eventName] == true then
             if player:GetTeam() == TEAM_ALLIANCE then
                 if numExpectedAllies > 10 and numExpectedAllies > numExpectedHorde * 1.5 then
-                    chatHandler:SendSysMessage("There are too many players from the Alliance already. Care to join as Horde?")
+                    chatHandler:SendSysMessage("联盟的玩家已经太多了。 愿意加入部落吗？")
                     return false
                 end
             elseif player:GetTeam() == TEAM_HORDE then
                 if numExpectedHorde > 10 and numExpectedHorde > numExpectedAllies * 1.5 then
-                    chatHandler:SendSysMessage("There are too many players from the Horde already. Care to join as Alliance?")
+                    chatHandler:SendSysMessage("部落的玩家已经太多了。 想加入联盟吗？")
                     return false
                 end
             end
         end
 
         optIn[player:GetGUIDLow()] = 1
-        chatHandler:SendSysMessage("You've signed up for the event! Use '.fun no' to opt out.")
+        chatHandler:SendSysMessage("您已报名参加活动！ 使用“.fun no”选择退出。")
         if player:GetTeam() == TEAM_ALLIANCE then
             numExpectedAllies = numExpectedAllies + 1
         else
@@ -463,7 +463,7 @@ local function ft_command(event, player, command, chatHandler)
 
     if commandArray[2] == 'return' then
         if player == nil then
-            chatHandler:SendSysMessage("Can not use 'return' from the console. Requires player object.")
+            chatHandler:SendSysMessage("不能从控制台使用“return”。 需要玩家对象。")
             return false
         end
         if storedMap[player:GetGUIDLow()] ~= nil then
@@ -475,7 +475,7 @@ local function ft_command(event, player, command, chatHandler)
             ft_wipePos( player )
             return false
         else
-            chatHandler:SendSysMessage("There is no position saved for your character.")
+            chatHandler:SendSysMessage("没有为您的角色保存位置。")
             return false
         end
     end
